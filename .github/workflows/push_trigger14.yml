@@ -49,7 +49,7 @@ jobs:
             - name: Generate tar files
               run: |
                   echo "BRANCH_NAME=$BRANCH_NAME";
-                  helm repo add Rakshithb1 https://github.com/Rakshithb1/orbit/
+                  helm repo add Rakshithb1 https://github.com/Rakshithb1/
 
                   echo "COMMIT=${{ env.COMMIT_ID }}"
                   echo "SKIP=FALSE" >> $GITHUB_ENV
