@@ -1,9 +1,10 @@
-name: Publish mosip-helm charts
+name: Publish123 mosip-helm charts
 
 on:
     push:
         branches:
             - master
+            - main
         paths:
             - 'charts/**'
 
