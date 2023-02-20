@@ -1,10 +1,10 @@
-name: Publish mosip-helm charts
+name: Publish123 mosip-helm charts
 
 on:
     push:
         branches:
-            - 1.2.0.*
-            - develop
+            - master
+            - main
         paths:
             - 'charts/**'
 
@@ -49,7 +49,7 @@ jobs:
             - name: Generate tar files
               run: |
                   echo "BRANCH_NAME=$BRANCH_NAME";
-                  helm repo add mosip https://mosip.github.io/mosip-helm
+                  helm repo add Rakshithb1 https://github.com/Rakshithb1/orbit/
 
                   echo "COMMIT=${{ env.COMMIT_ID }}"
                   echo "SKIP=FALSE" >> $GITHUB_ENV
@@ -95,7 +95,7 @@ jobs:
             - name: Update index.yaml
               run: |
                   git status
-                  helm repo index --url https://mosip.github.io/mosip-helm/ .
+                  helm repo index --url https://github.com/Rakshithb1/orbit/ .
               if: env.SKIP != 'TRUE'
 
             - name: Commit Changes to mosip-helm Repository
