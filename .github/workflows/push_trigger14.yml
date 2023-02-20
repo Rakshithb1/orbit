@@ -96,7 +96,7 @@ jobs:
             - name: Update index.yaml
               run: |
                   git status
-                  helm repo index --url https://github.com/Rakshithb1/ .
+                  helm repo index --url https://github.com/Rakshithb1/orbit/tree/master .
               if: env.SKIP != 'TRUE'
 
             - name: Commit Changes to mosip-helm Repository
