@@ -1,14 +1,22 @@
-name: release
+name: release-chart
 on:
   push:
-    branches: '*'
+    branches: 'chart-*'
 
 jobs:
-  release:
+  release-chart:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Publish Helm charts
+      - name: Publish Helm chart
         uses: stefanprodan/helm-gh-pages@master
         with:
-           token: ${{ secrets.SEC_GITHUB_TOKEN }}
+          token: ${{ secrets.SEC_GITHUB_TOKEN }}
+          charts_dir: chart
+          charts_url: https://github.com/Rakshithb1/testorbit
+          owner: Rakshithb1
+          repository: charts
+          branch: gh-pages
+          target_dir: charts
+          commit_username: Rakshithb1
+        
