@@ -13,10 +13,10 @@ jobs:
         with:
           token: ${{ secrets.SEC_GITHUB_TOKEN }}
           charts_dir: charts
-          charts_url: https://github.com/Rakshithb1/testorbit
-          owner: Rakshithb1
+          charts_url: https://github.com/Rakshithb1/testorbit1
+          #owner: Rakshithb1
           repository: testorbit
           branch: gh-pages
          # target_dir: charts
-          commit_username: Rakshithb1
+          #commit_username: Rakshithb1
           #commit_email: johndoe@example.com
