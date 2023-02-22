@@ -1,4 +1,4 @@
-name: release-chart
+name: release-chart1
 on:
   push:
     branches: '*'
