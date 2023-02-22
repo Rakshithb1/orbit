@@ -1,7 +1,7 @@
-name: release-chart123
+name: release-chart
 on:
   push:
-    branches: 'chart-*'
+    tags: 'chart-*'
 
 jobs:
   release-chart:
@@ -13,10 +13,10 @@ jobs:
         with:
           token: ${{ secrets.SEC_GITHUB_TOKEN }}
           charts_dir: chart
-          charts_url: https://github.com/Rakshithb1/testorbit
-          owner: Rakshithb1
+          charts_url: https://charts.fluxcd.io
+          owner: fluxcd
           repository: charts
           branch: gh-pages
           target_dir: charts
-          commit_username: Rakshithb1
-        
+          commit_username: johndoe
+          commit_email: johndoe@example.com
