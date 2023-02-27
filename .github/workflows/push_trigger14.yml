@@ -9,10 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Helm chart
-        uses: stefanprodan/helm-gh-pages@master
+        uses: tylerauerbeck/helm-gh-pages@main
         with:
           token: ${{ secrets.SEC_GITHUB_TOKEN }}
-          charts_dir: charts.
+          charts_dir: .
           charts_url: https://github.com/Rakshithb1/tstorbit2
           #owner: Rakshithb1
           repository: tstorbit2
