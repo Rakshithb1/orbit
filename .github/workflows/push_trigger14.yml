@@ -12,7 +12,7 @@ jobs:
         uses: stefanprodan/helm-gh-pages@master
         with:
           token: ${{ secrets.SEC_GITHUB_TOKEN }}
-          charts_dir: Charts
+          charts_dir: charts
           charts_url: https://github.com/Rakshithb1/tstorbit2
           #owner: Rakshithb1
           repository: tstorbit2
@@ -20,5 +20,4 @@ jobs:
          # target_dir: charts
           #commit_username: Rakshithb1
           #commit_email: johndoe@example.com
-      - name: abc
-        run : echo "$charts_dir"
+
