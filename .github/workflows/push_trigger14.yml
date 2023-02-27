@@ -21,4 +21,4 @@ jobs:
           #commit_username: Rakshithb1
           #commit_email: johndoe@example.com
       - name: abc
-        run : echo $charts_dir
+        run : echo "$charts_dir"
