@@ -9,6 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Helm chart
+        run: |
+          echo $charts_dir
         uses: stefanprodan/helm-gh-pages@master
         with:
           token: ${{ secrets.SEC_GITHUB_TOKEN }}
