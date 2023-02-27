@@ -1,10 +1,10 @@
-name: release-chart1
+#name: release-chart1
 on:
   push:
     branches: '*'
 
-jobs:
-  release-chart:
+#jobs:
+  #release-chart:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
