@@ -1,5 +1,5 @@
 #name: release-chart1
-on:
+#on:
   push:
     branches: '*'
 
