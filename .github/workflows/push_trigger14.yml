@@ -12,7 +12,7 @@ jobs:
         uses: tylerauerbeck/helm-gh-pages@main
         with:
           token: ${{ secrets.SEC_GITHUB_TOKEN }}
-          charts_dir: helm
+          charts_dir: charts
           charts_url: https://github.com/Rakshithb1/tstorbit2
           #owner: Rakshithb1
           repository: tstorbit2
