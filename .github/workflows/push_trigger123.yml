@@ -3,7 +3,7 @@ name: Build and Push Helm Chart
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
