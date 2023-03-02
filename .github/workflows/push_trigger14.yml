@@ -17,7 +17,7 @@ jobs:
       uses: azure/setup-helm@v2
 
     - name: Build Helm chart
-      run: helm package charts/admin-service/
+      run: helm package charts/*
 
     - name: Clone gh-pages repository
       uses: actions/checkout@v2
