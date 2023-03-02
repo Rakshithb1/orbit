@@ -22,7 +22,7 @@ jobs:
     - name: Clone gh-pages repository
       uses: actions/checkout@v2
       with:
-        repository: tstorbit2/gh-pages
+        repository: tstorbit2
         #ref: main
         path: gh-pages
 
