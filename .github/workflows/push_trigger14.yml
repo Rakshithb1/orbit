@@ -1,23 +1,38 @@
-#name: release-chart1
-#on:
+name: Build and Push Helm Chart
+
+on:
   push:
-    branches: '*'
+    branches:
+      - master
 
-#jobs:
-  #release-chart:
+jobs:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Publish Helm chart
-        uses: tylerauerbeck/helm-gh-pages@main
-        with:
-          token: ${{ secrets.SEC_GITHUB_TOKEN }}
-          charts_dir: charts
-          charts_url: https://github.com/Rakshithb1/tstorbit2
-          #owner: Rakshithb1
-          repository: tstorbit2
-          branch: gh-pages
-         # target_dir: charts
-          #commit_username: Rakshithb1
-          #commit_email: johndoe@example.com
 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Helm
+      uses: Azure/helm-setup@v1.0.0
+
+    - name: Build Helm chart
+      run: helm package mychart
+
+    - name: Clone gh-pages repository
+      uses: actions/checkout@v2
+      with:
+        repository: tstorbit2/gh-pages
+        #ref: main
+        path: gh-pages
+
+    - name: Copy Helm chart to gh-pages repository
+      run: |
+        mv mychart-*.tgz gh-pages/
+        helm repo index gh-pages --url https://github.com/Rakshithb1/tstorbit2/gh-pages/
+        cd gh-pages
+        #git config user.email "github-actions@github.com"
+        #git config user.name "GitHub Actions"
+        git add .
+        git commit -m "Add mychart-0.1.0.tgz"
+        git push
