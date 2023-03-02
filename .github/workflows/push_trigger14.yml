@@ -13,8 +13,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Helm
-      uses: Azure/helm-setup@v1.0.0
+    #- name: Set up Helm
+     # uses: Azure/helm-setup@v1.0.0
 
     - name: Build Helm chart
       run: helm package mychart
