@@ -2,7 +2,7 @@
 
 Helm chart for installing MOSIP Admin module
 
-## TL;DR
+## TL;DRyy
 
 ```console
 $ helm repo add mosip https://mosip.github.io
