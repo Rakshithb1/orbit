@@ -2,8 +2,7 @@ name: abd-charts
 on:
   push:
     branches: '*'
-    paths:
-      - 'helm/**'
+
 
 
 jobs:
@@ -14,7 +13,7 @@ jobs:
       - name: Publish Helm chart
         uses: stefanprodan/helm-gh-pages@v1.7.0
         with:
-          token: ${{ secrets.SEC_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           charts_dir: helm/charts
           charts_url: https://github.com/Rakshithb1
           #owner: fluxcd
