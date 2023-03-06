@@ -1,8 +1,8 @@
 apiVersion: v2
-name: mock-relying-party-service
-description: A Helm chart to file server application.
+name: compliance-toolkit
+description: A Helm chart for compliance-toolkit Application service
 type: application
-version: 0.0.1
+version: 12.0.2
 appVersion: ""
 dependencies:
   - name: common
@@ -13,7 +13,8 @@ dependencies:
 home: https://mosip.io
 keywords:
   - mosip
-  - mock-relying-party-service
+  - compliance-toolkit
+  - kernel
 maintainers:
   - email: info@mosip.io
     name: MOSIP

@@ -41,6 +41,7 @@ service:
   ##   http: <to set explicitly, choose port between 30000-32767>
   ##   https: <to set explicitly, choose port between 30000-32767>
   ##
+
   nodePorts:
     http: ""
     https: ""
@@ -51,8 +52,8 @@ service:
 
 image:
   registry: docker.io
-  repository: mosipdev/mock-relying-party-service
-  tag: develop
+  repository: mosipdev/compliance-toolkit-service
+  tag: latest
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -64,18 +65,9 @@ image:
   ##
   # pullSecrets:
   #   - myRegistryKeySecretName
-mock_relying_party_service:
-  host: ''
-  mountDir: ""  # path inside docker
-  healthCheckUrl:
-  mock_relying_party_serviceMountDIr: /home/mosip/oidc/
-  puburl:
-  privurl:
-  ESIGNET_SERVICE_URL: https://api.sandbox.xyz.net/v1/esignet
-  ESIGNET_AUD_URL: https://api.sandbox.xyz.net/v1/esignet/oauth/token
-  USERINFO_RESPONSE_TYPE: jwt
+
 ## Port on which this particular spring service module is running.
-containerPort: 8888
+springServicePort: 8099
 
 ## Configure extra options for liveness and readiness probes
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
@@ -83,31 +75,34 @@ containerPort: 8888
 startupProbe:
   enabled: true
   httpGet:
-    port: 8888
+    path: /v1/toolkit/actuator/health
+    port: 8099
   initialDelaySeconds: 0
-  periodSeconds: 30
+  periodSeconds: 10
   timeoutSeconds: 5
-  failureThreshold: 10
+  failureThreshold: 30
   successThreshold: 1
 
 livenessProbe:
   enabled: true
   httpGet:
-    port: 8888
+    path: /v1/toolkit/actuator/health
+    port: 8099
   initialDelaySeconds: 20
-  periodSeconds: 60
+  periodSeconds: 10
   timeoutSeconds: 5
-  failureThreshold: 2
+  failureThreshold: 6
   successThreshold: 1
 
 readinessProbe:
   enabled: true
   httpGet:
-    port: 8888
+    path: /v1/toolkit/actuator/health
+    port: 8099
   initialDelaySeconds: 0
-  periodSeconds: 60
+  periodSeconds: 10
   timeoutSeconds: 5
-  failureThreshold: 2
+  failureThreshold: 6
   successThreshold: 1
 
 ##
@@ -134,7 +129,7 @@ resources:
   #   cpu: 200m
   #   memory: 256Mi
   requests:
-    cpu: 100m
+    cpu: 200m
     memory: 1500Mi
 
 additionalResources:
@@ -217,7 +212,7 @@ podAnnotations: {}
 ##  pods' priority.
 ## ref: https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/
 ##
- # priorityClassName: ""
+# priorityClassName: ""
 
 ## lifecycleHooks for the  container to automate configuration before or after startup.
 ##
@@ -245,13 +240,14 @@ updateStrategy:
 ##   - name: FOO
 ##     value: "bar"
 ##
-## TODO: the below env variable is not used, but required.  Remove it later
 extraEnvVars: []
 
-## ConfigMap with extra environment variables
+## ConfigMap with extra environment variables that used
 ##
 extraEnvVarsCM:
+  - global
   - config-server-share
+  - artifactory-share
 
 ## Secret with extra environment variables
 ##
@@ -291,7 +287,6 @@ sidecars: {}
 
 persistence:
   enabled: false
-  storageClass: "longhorn"
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
   ## If undefined (the default) or set to null, no storageClassName spec is
@@ -304,9 +299,10 @@ persistence:
   ## the existingClaim variable
   # existingClaim: your-claim
   ## ReadWriteMany not supported by AWS gp2
+  storageClass:
   accessModes:
     - ReadWriteOnce
-  size: 8G
+  size: 10M
   existingClaim:
   # Dir where config and keys are written inside container
   mountDir:
@@ -315,7 +311,7 @@ persistence:
 ## volumePermissions: Change the owner and group of the persistent volume mountpoint to runAsUser:fsGroup values from the securityContext section.
 ##
 volumePermissions:
-  enabled: true
+  enabled: false
   image:
     registry: docker.io
     repository: bitnami/bitnami-shell
@@ -362,14 +358,14 @@ serviceAccount:
 ## Prometheus Metrics
 ##
 metrics:
-  enabled: false
+  enabled: true
   ## Prometheus pod annotations
   ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   ##
   podAnnotations:
     prometheus.io/scrape: "true"
 
-  endpointPath:
+  endpointPath: /v1/toolkit/actuator/prometheus
 
   ## Prometheus Service Monitor
   ## ref: https://github.com/coreos/prometheus-operator
@@ -416,15 +412,41 @@ metrics:
     #       severity: error
     rules: []
 
-## Only internal access
 istio:
   enabled: true
   gateways:
-    - istio-system/public
     - istio-system/internal
-  # ingressController is only valid if gateways is null/empty
-  ingressController:
-    # for public, istio: ingressgateway && for internal, istio: ingressgateway-internal
-    istio: ingressgateway-internal
-  mock_relying_party_servicePrefix: /
-  reWritemock_relying_party_servicePrefix: ""
+  prefix: /v1/toolkit
+  corsPolicy:
+    allowOrigins:
+      - exact: https://compliance.sandbox.xyz.net
+      - prefix: http://localhost
+    allowCredentials: true
+    allowHeaders:
+      - Accept
+      - Accept-Encoding
+      - Accept-Language
+      - Connection
+      - Content-Type
+      - Cookie
+      - Host
+      - Referer
+      - Sec-Fetch-Dest
+      - Sec-Fetch-Mode
+      - Sec-Fetch-Site
+      - Sec-Fetch-User
+      - Origin
+      - Upgrade-Insecure-Requests
+      - User-Agent
+      - sec-ch-ua
+      - sec-ch-ua-mobile
+      - sec-ch-ua-platform
+      - x-xsrf-token
+      - xsrf-token
+      - Access-Control-Allow-Origin
+    allowMethods:
+      - GET
+      - POST
+      - PATCH
+      - PUT
+      - DELETE
