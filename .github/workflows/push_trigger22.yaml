@@ -16,7 +16,7 @@ jobs:
         uses: stefanprodan/helm-gh-pages@v1.7.0
         with:
           token: ${{ secrets.SEC_GITHUB_TOKEN }}
-          charts_dir: helm/charts
+          charts_dir: helm
           charts_url: https://github.com/Rakshithb1
           #owner: fluxcd
           repository: tstorbit2
