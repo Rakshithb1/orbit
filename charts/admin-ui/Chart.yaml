@@ -10,11 +10,5 @@ dependencies:
     tags:
       - bitnami-common
     version: 1.x.x
-home: https://mosip.io
 keywords:
-  - mosip
   - admin
-  - kernel
-maintainers:
-  - email: info@mosip.io
-    name: MOSIP
