@@ -58,7 +58,7 @@ entries:
     - https://Rakshithb1.github.io/orbit/admin-hotlist-12.0.2.tgz
     version: 12.0.2
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.258113033Z"
+    created: "2023-03-31T07:00:26.232064897Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -66,7 +66,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Admin Hotlist
-    digest: f8125574928ea19cbcde31c7e348843762823606929d646b71f4c292c4c1b823
+    digest: 0c1cf400a916a966312610d2a01d7222b24db5d61a6aa5855e3e1b44f3f59e4f
     home: https://mosip.io
     keywords:
     - mosip
@@ -105,7 +105,7 @@ entries:
     - https://Rakshithb1.github.io/orbit/admin-service-12.0.2.tgz
     version: 12.0.2
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.26024263Z"
+    created: "2023-03-31T07:00:26.233896922Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -113,7 +113,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Admin module
-    digest: df5136cdcb251a0f63bdb6e4764992427fb843779a6ac95631fafc6f36bebb19
+    digest: 2accbb32a34e67e1f0df527c412adfe032e25d7f774e13ad2c3636ace70cbb0d
     home: https://mosip.io
     keywords:
     - mosip
@@ -152,7 +152,7 @@ entries:
     - https://Rakshithb1.github.io/orbit/admin-ui-12.0.2.tgz
     version: 12.0.2
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.262124528Z"
+    created: "2023-03-31T07:00:26.235693845Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -160,7 +160,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Admin UI module
-    digest: 6126be3a25eb497da487d0ae4a054702fb2e3a6e10aca724b79f5dbbba89a3a6
+    digest: 420879239a8fe8c58e84c1b00ad3e08ef165dfccf3bf33b3cfa2de2a0dd2ed2e
     home: https://mosip.io
     keywords:
     - mosip
@@ -199,7 +199,7 @@ entries:
     version: 12.0.2
   pmp-ui:
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.264490725Z"
+    created: "2023-03-31T07:00:26.237452668Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -207,14 +207,9 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP pmp UI module
-    digest: 6b9471f87ae7e6a2da8bb304a03c7905c1a0759075eb82d66464aacff82a5346
-    home: https://mosip.io
+    digest: 5739a384a80ede48c0685b09334a1fe344224996d5eaeedf7a98e668fa0bf0d0
     keywords:
-    - mosip
     - pmp
-    maintainers:
-    - email: info@mosip.io
-      name: MOSIP
     name: pmp-ui
     type: application
     urls:
@@ -222,7 +217,7 @@ entries:
     version: 12.0.1-B2
   pms-partner:
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.267970321Z"
+    created: "2023-03-31T07:00:26.2398558Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -230,7 +225,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Partner Management Service Partner service
-    digest: ec3e894cee9c0608cbed9c4b61d487735fdd4686e5e3fa9f28881bf13df4df45
+    digest: b81aabcaf309ad75ec79d7992aa91fe00ea21b3a3abf207ae1ce2b7437dfa3b6
     home: https://mosip.io
     keywords:
     - mosip
@@ -246,7 +241,7 @@ entries:
     version: 12.0.1-B2
   pms-policy:
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.270123118Z"
+    created: "2023-03-31T07:00:26.242251132Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -254,7 +249,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Packetmanager module
-    digest: 9976537e34405a74e2a94a55b9a9e652f073cddb0c4098bc8a531b6ca41adb9a
+    digest: 4309d3bd9c6a4bea34d974792ee5e548394cc95c712b10dea1a4dba12944b6ee
     home: https://mosip.io
     keywords:
     - mosip
@@ -270,7 +265,7 @@ entries:
     version: 12.0.1-B2
   prereg-application:
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.272025916Z"
+    created: "2023-03-31T07:00:26.244059056Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -278,7 +273,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Pre-registration Application service
-    digest: b98e351bfa2ed9707f4d5ff6b56a620680cae0a017e29cd5d6524fc8baf8195f
+    digest: 36f75d346b4122551a19810a3f130db5aafd017b8855f95363ab14a8cc41282c
     home: https://mosip.io
     keywords:
     - mosip
@@ -294,7 +289,7 @@ entries:
     version: 12.0.1-B2
   prereg-batchjob:
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.273921413Z"
+    created: "2023-03-31T07:00:26.245770378Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -302,7 +297,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Pre-registration Batchjob service
-    digest: 36edbf4e8c7edab8b04a30c7ca54be92537b8ff824111125498174d5614e8c1f
+    digest: 7b2b24c98fcbdf6f3fa24ff425a7a22216cd6cfbf34786206e0aa74d5dcd4689
     home: https://mosip.io
     keywords:
     - mosip
@@ -318,7 +313,7 @@ entries:
     version: 12.0.1-B2
   prereg-booking:
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.275786011Z"
+    created: "2023-03-31T07:00:26.2474431Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -326,7 +321,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Pre-registration application service
-    digest: d6af8c5d2449051df56a75daad71e7aa59d843b585878272c8f23714c2dce7fc
+    digest: 2e740a39db7f3583ac6e6890ae8b4c3c52b525402b03c552b986aa3f0b4ea76c
     home: https://mosip.io
     keywords:
     - mosip
@@ -342,7 +337,7 @@ entries:
     version: 12.0.1-B2
   prereg-captcha:
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.278044108Z"
+    created: "2023-03-31T07:00:26.249119622Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -350,7 +345,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Pre-registration Captcha Service
-    digest: 3ee555fe487a6238c94ed001e73a055dd401fc149d5e8182d5062c11846615c1
+    digest: 278014ffa1ed81993ca57909fde65280aaa009762f4096621716e86babb36c25
     home: https://mosip.io
     keywords:
     - mosip
@@ -366,7 +361,7 @@ entries:
     version: 12.0.1-B2
   prereg-datasync:
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.280198605Z"
+    created: "2023-03-31T07:00:26.251764957Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -374,7 +369,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Pre-registration Datasync service
-    digest: 6e4b4e41b0b3ab2094057f3038afcf7fb762b5946bb89e74e8b9e31edebbf664
+    digest: 32c7b446924118c9512d29b2c7b37289fb958cde2b81b0a2ba7da0741c08b20c
     home: https://mosip.io
     keywords:
     - mosip
@@ -389,7 +384,7 @@ entries:
     version: 12.0.1-B2
   prereg-gateway:
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.281823203Z"
+    created: "2023-03-31T07:00:26.253352278Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -397,7 +392,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Pre-registration Istio Gateway
-    digest: 89a3c8bd1c5a9b6cc124e906bdc8a47a40ca67f5d6731e8d215590b3543879d4
+    digest: d3f730140caf0d95c43e5b4a15f43504ad238adc36fbe538451fa147edcff452
     home: https://mosip.io
     keywords:
     - mosip
@@ -413,7 +408,7 @@ entries:
     version: 12.0.1-B2
   prereg-ui:
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.283590701Z"
+    created: "2023-03-31T07:00:26.255055001Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -421,7 +416,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Pre-registration UI
-    digest: 21042979f76e451982eea77bf44a2b74253c6b30497c3b5939124839a7c81e0d
+    digest: a6df4a8105928449601ce672e902e6d1503c125ecd579de655804a0bb11248e7
     home: https://mosip.io
     keywords:
     - mosip
@@ -437,7 +432,7 @@ entries:
     version: 12.0.1-B2
   pridgenerator:
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.285348499Z"
+    created: "2023-03-31T07:00:26.256726323Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -445,7 +440,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP PRIDgenerator module
-    digest: f99667cce05cf1b78976469b27407fb30509b280efa6c91e6f34c60f58534ea3
+    digest: 508c70e602b8548141673c0fb7e65de226f550abccbcf36b9ece41eab0e9db0b
     home: https://mosip.io
     keywords:
     - mosip
@@ -461,7 +456,7 @@ entries:
     version: 12.0.1-B2
   print-service:
   - apiVersion: v2
-    created: "2023-03-30T05:02:17.287108796Z"
+    created: "2023-03-31T07:00:26.258414345Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -469,7 +464,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for sample Print Service
-    digest: 94b3502142273c1072126d09d43e5c8ee5965ed28126c1cd2e243b97cb9216ea
+    digest: a3d62a05a194efdbf2971f5c56739d2328896ea98f035045d0795091c148ffe6
     home: https://mosip.io
     keywords:
     - mosip
@@ -483,4 +478,4 @@ entries:
     urls:
     - https://Rakshithb1.github.io/orbit/print-service-12.0.1-B2.tgz
     version: 12.0.1-B2
-generated: "2023-03-30T05:02:17.255262237Z"
+generated: "2023-03-31T07:00:26.22926986Z"
