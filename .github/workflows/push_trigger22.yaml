@@ -14,7 +14,7 @@ jobs:
         with:
           token: ${{ secrets.SEC_GITHUB_TOKEN }}
           charts_dir: charts
-          charts_url: https://rakshithb1.github.io/tstorbit2/
+          #charts_url: https://rakshithb1.github.io/tstorbit2/
           #owner: fluxcd
           repository: tstorbit2
           branch: gh-pages
