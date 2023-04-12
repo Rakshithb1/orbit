@@ -2,10 +2,7 @@ name: abd-charts
 on:
   push:
     branches: '*'
-    paths:
-      - 'helm/**'
-
-
+    
 
 jobs:
   release-chart:
